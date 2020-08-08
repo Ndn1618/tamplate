@@ -29,24 +29,69 @@
   </head>
   
   <script type="text/javascript">
+    // function add () {
+    //   const newDiv = document.createElement('DIV')
+    //   users.appendChild(newDiv)
+
+    //   const newLi = document.createElement('LI')
+    //   newLi.textContent = username.value
+    //   newDiv.appendChild(newLi)
+
+    //   username.value = ''
+
+    //   const newBtn = document.createElement('BUTTON')
+    //   newDiv.appendChild(newBtn)
+
+    //   newBtn.onclick = function () {
+    //     newLi.remove()
+    //     newDiv.remove()
+    //     newBtn.remove()
+    //   }
+    // }
+
+    // username_button.onclick = add
+
+    // username.onkeyup = function (event) {
+    //   if (event.keyCode == 13 && username.value.length > 0) {
+    //     const newDiv = document.createElement('DIV')
+    //   users.appendChild(newDiv)
+
+    //   const newLi = document.createElement('LI')
+    //   newLi.textContent = username.value
+    //   newDiv.appendChild(newLi)
+
+    //   username.value = ''
+
+    //   const newBtn = document.createElement('BUTTON')
+    //   newDiv.appendChild(newBtn)
+
+    //   newBtn.onclick = function () {
+    //     newLi.remove()
+    //     newDiv.remove()
+    //     newBtn.remove()
+    //   }
+    //   }
+    // }
+
     function add () {
-      const newDiv = document.createElement('DIV')
-      users.appendChild(newDiv)
+      if (username.value.length > 0) {
+        const newDiv = document.createElement('DIV')
+        users.appendChild(newDiv)
 
-      const newLi = document.createElement('LI')
-      newLi.textContent = username.value
-      newDiv.appendChild(newLi)
+        const newLi = document.createElement('LI')
+        newLi.textContent = username.value
+        newDiv.appendChild(newLi)
 
-      username.value = ''
+        username.value = ''
 
-      const newBtn = document.createElement('BUTTON')
-      newDiv.appendChild(newBtn)
+        const newBtn = document.createElement('BUTTON')
+        newDiv.appendChild(newBtn)
 
-      newBtn.onclick = function () {
-        newLi.remove()
+        newBtn.onclick = function () {
         newDiv.remove()
-        newBtn.remove()
       }
+      }
+      
     }
 
     username_button.onclick = add
@@ -54,24 +99,22 @@
     username.onkeyup = function (event) {
       if (event.keyCode == 13 && username.value.length > 0) {
         const newDiv = document.createElement('DIV')
-      users.appendChild(newDiv)
+        users.appendChild(newDiv)
 
-      const newLi = document.createElement('LI')
-      newLi.textContent = username.value
-      newDiv.appendChild(newLi)
+        const newLi = document.createElement('LI')
+        newLi.textContent = username.value
+        newDiv.appendChild(newLi)
 
-      username.value = ''
+        username.value = ''
 
-      const newBtn = document.createElement('BUTTON')
-      newDiv.appendChild(newBtn)
+        const newBtn = document.createElement('BUTTON')
+        newDiv.appendChild(newBtn)
 
-      newBtn.onclick = function () {
-        newLi.remove()
+        newBtn.onclick = function () {
         newDiv.remove()
-        newBtn.remove()
       }
       }
-    }
+    } 
   </script>
 </body>
 </html>
