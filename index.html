@@ -4,8 +4,74 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>1-dars</title>
+  <link rel="stylesheet" href="css/normalize.css">
+  <link rel="stylesheet" href="css/styles.css">
 </head>
 <body>
+  <head>
+    <div class="container">
+      <div class="header-top">
+        <input 
+        type="text"
+        id="username" 
+        autocomplete="off" 
+        spellcheck="false"
+        placeholder="Username"
+      >
+      <button id="username_button">
+        <img src="img/add.svg" alt="Add icon" width="50" height="50">
+      </button>
+      </div>
+      
+      <ul id="users">
+      </ul>
+    </div>
+  </head>
   
+  <script type="text/javascript">
+    function add () {
+      const newDiv = document.createElement('DIV')
+      users.appendChild(newDiv)
+
+      const newLi = document.createElement('LI')
+      newLi.textContent = username.value
+      newDiv.appendChild(newLi)
+
+      username.value = ''
+
+      const newBtn = document.createElement('BUTTON')
+      newDiv.appendChild(newBtn)
+
+      newBtn.onclick = function () {
+        newLi.remove()
+        newDiv.remove()
+        newBtn.remove()
+      }
+    }
+
+    username_button.onclick = add
+
+    username.onkeyup = function (event) {
+      if (event.keyCode == 13) {
+        const newDiv = document.createElement('DIV')
+      users.appendChild(newDiv)
+
+      const newLi = document.createElement('LI')
+      newLi.textContent = username.value
+      newDiv.appendChild(newLi)
+
+      username.value = ''
+
+      const newBtn = document.createElement('BUTTON')
+      newDiv.appendChild(newBtn)
+
+      newBtn.onclick = function () {
+        newLi.remove()
+        newDiv.remove()
+        newBtn.remove()
+      }
+      }
+    }
+  </script>
 </body>
 </html>

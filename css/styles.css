@@ -9,4 +9,78 @@ html {
 body {
   margin: 0;
   padding: 0;
+  font-family: "Arial", sans-serif;
+  font-weight: 600;
+  font-size: 25px;
+  line-height: 1.5;
+  background-color: rgba(255, 182, 193, 0.5);
+  color: #fff;
+}
+.container {
+  max-width: 1240px;
+  padding: 0 20px;
+  margin: 100px auto 0;
+}
+.header-top {
+  display: flex;
+  align-items: center;
+}
+#username {
+  background: #fff;
+  border: none;
+  border-radius: 10px;
+  padding: 20px;
+}
+#username:focus,
+#username_button:focus,
+#users button:focus {
+  outline: none;
+  box-shadow: 2px 2px 10px 10px #fb6bcb;
+}
+#username_button {
+  border: none;
+  border-radius: 10px;
+  background: #fff;
+  padding: 10px;
+  margin-left: 20px;
+}
+#username_button img {
+  display: block;
+  width: 50px;
+  height: 50px;
+}
+#users {
+  display: flex;
+  flex-direction: column;
+  list-style-type: none;
+  margin: 20px 0 0;
+}
+#users div {
+  display: flex;
+  align-items: center;
+  margin-bottom: 20px;
+}
+#users li {
+  position: relative;
+  display: block;
+  text-align: center;
+  background-color: #fb6bcb;
+  border-radius: 10px;
+  margin: 0 10px 0 0;
+  padding: 16px;
+}
+#users li:nth-child(even) {
+  color: #fb6bcb;
+  background-color: #fff;
+}
+#users button {
+  width: 70px;
+  height: 70px;
+  border: none;
+  background: #fff;
+  border-radius: 10px;
+  background-image: url("../img/remove.svg");
+  background-size: 50px 50px;
+  background-position: center center;
+  background-repeat: no-repeat;
 }
