@@ -69,10 +69,6 @@ body {
   margin: 0 10px 0 0;
   padding: 16px;
 }
-#users li:nth-child(even) {
-  color: #fb6bcb;
-  background-color: #fff;
-}
 #users button {
   width: 70px;
   height: 70px;
