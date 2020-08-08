@@ -52,7 +52,7 @@
     username_button.onclick = add
 
     username.onkeyup = function (event) {
-      if (event.keyCode == 13) {
+      if (event.keyCode == 13 && username.value.length > 0) {
         const newDiv = document.createElement('DIV')
       users.appendChild(newDiv)
 
