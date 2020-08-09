@@ -25,6 +25,8 @@
           <img src="img/radio-microphone.svg" alt="Voice recorder icon" width="50" height="50">
         </button>
       </div>
+
+      <div id="alertDiv"></div>
       
       <ul id="users">
       </ul>
@@ -37,8 +39,14 @@
     
     rec.lang = 'uz-UZ'
     
-    rec.onerror = function (event) {
-      console.log(event)
+    rec.onerror = function () {
+      const newP = document.createElement('P')
+      newP.textContent = 'Ovoz yozib olishda xatolik bor :('
+      alertDiv.appendChild(newP)
+
+      window.onclick = function () {
+      newP.remove()
+    }
     }
 
     function recStart () {
@@ -62,7 +70,6 @@
     newBtn.onclick = function () {
     newDiv.remove()
     }
-
     }
 
     function add () {
