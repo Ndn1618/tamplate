@@ -70,8 +70,8 @@
     blue.onclick = modeBlue
 
     function modeGreen () {
-      document.body.style.backgroundColor = '#87d487'
-      document.documentElement.style.setProperty('--main-color', '#3fa13f')
+      document.body.style.backgroundColor = 'rgba(135, 212, 135, 0.5)'
+      document.documentElement.style.setProperty('--main-color', '#51c051')
     }
 
     green.onclick = modeGreen
@@ -98,19 +98,26 @@
       }
 
       else {
-        const newDiv = document.createElement('DIV')
-        users.appendChild(newDiv)
+        const answer = confirm('Yangi hodimni qo\'shmoqchimisiz?')
+
+        if (answer) {
+          const newDiv = document.createElement('DIV')
+          users.appendChild(newDiv)
         
-        const newLi = document.createElement('LI')
-        newLi.textContent = event.results[0][0].transcript.toUpperCase().trim()
-        newDiv.appendChild(newLi)
+          const newLi = document.createElement('LI')
+          newLi.textContent = event.results[0][0].transcript.toUpperCase().trim()
+          newDiv.appendChild(newLi)
         
-        const newBtn = document.createElement('BUTTON')
-        newDiv.appendChild(newBtn)
+          const newBtn = document.createElement('BUTTON')
+          newDiv.appendChild(newBtn)
         
-        newBtn.onclick = function () {
-        newDiv.remove()
+          newBtn.onclick = function () {
+          newDiv.remove()
+          }
         }
+        else {
+          const show = confirm('Qo\'shish rad etildi.')
+        } 
       }
     }
 
