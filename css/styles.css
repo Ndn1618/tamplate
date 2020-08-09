@@ -1,3 +1,6 @@
+:root {
+  --main-color: #fb6bcb;
+}
 html {
   box-sizing: border-box;
 }
@@ -21,6 +24,26 @@ body {
   padding: 0 20px;
   margin: 100px auto 0;
 }
+.change-color-section ul {
+  display: flex;
+  align-items: center;
+  list-style-type: none;
+}
+.change-color-section li {
+  padding: 5px;
+  margin-left: 20px;
+  border-radius: 10px;
+  transition: 
+    transform 0.3s ease,
+    box-shadow 0.3s ease;
+}
+.change-color-section li#blue:hover,
+.change-color-section li#green:hover,
+.change-color-section li#pink:hover {
+  transform: rotate(-7deg);
+  box-shadow: 5px 5px 10px 10px #eee,
+    -5px -5px 10px 10px #eee;
+}
 .header-top {
   display: flex;
   align-items: center;
@@ -36,7 +59,7 @@ body {
 #users button:focus,
 #recButton:focus {
   outline: none;
-  box-shadow: 2px 2px 10px 10px #fb6bcb;
+  box-shadow: 2px 2px 10px 10px var(--main-color);
 }
 #username_button,
 #recButton {
@@ -57,7 +80,7 @@ body {
   height: 50px;
 }
 #alertDiv {
-  color: #fb6bcb;
+  color: var(--main-color);
 }
 #users {
   display: flex;
@@ -74,7 +97,7 @@ body {
   position: relative;
   display: block;
   text-align: center;
-  background-color: #fb6bcb;
+  background-color: var(--main-color);
   border-radius: 10px;
   margin: 0 10px 0 0;
   padding: 16px;

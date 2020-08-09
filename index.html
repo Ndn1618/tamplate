@@ -10,6 +10,13 @@
 <body>
   <head>
     <div class="container">
+      <div class="change-color-section">
+        <ul>
+          <li id="blue">Blue-mode</li>
+          <li id="green">Green-mode</li>
+          <li id="pink">Pink-mode</li>
+        </ul>
+      </div>
       <div class="header-top">
         <input 
         type="text"
@@ -54,6 +61,26 @@
     }
 
     recButton.onclick = recStart
+
+    function modeBlue () {
+      document.body.style.backgroundColor = 'lightblue'
+      document.documentElement.style.setProperty('--main-color', '#47c0e9') 
+    }
+
+    blue.onclick = modeBlue
+
+    function modeGreen () {
+      document.body.style.backgroundColor = '#87d487'
+      document.documentElement.style.setProperty('--main-color', '#3fa13f')
+    }
+
+    green.onclick = modeGreen
+
+    function modePink () {
+      document.body.style.backgroundColor = 'rgba(255, 182, 193, 0.5)'
+      document.documentElement.style.setProperty('--main-color', '#fb6bcb')
+    }
+    pink.onclick = modePink
     
     rec.onresult = function (event) {
 
@@ -70,6 +97,25 @@
       newBtn.onclick = function () {
       newDiv.remove()
     }
+    }
+    rec.onresult = function (event) {
+      const changer = event.results[0][0].transcript.toLowerCase().trim()
+
+      if (changer == 'yashil') {
+        modeGreen()
+      }
+
+      else if (changer == 'moviy') {
+        modeBlue()
+      }
+
+      else if (changer == 'pushti') {
+        modePink()
+      }
+
+      else {
+        console.log('Tushunmadim :(')
+      }
     }
 
     function add () {
