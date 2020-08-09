@@ -83,22 +83,6 @@
     pink.onclick = modePink
     
     rec.onresult = function (event) {
-
-      const newDiv = document.createElement('DIV')
-      users.appendChild(newDiv)
-        
-      const newLi = document.createElement('LI')
-      newLi.textContent = event.results[0][0].transcript.toUpperCase().trim()
-      newDiv.appendChild(newLi)
-        
-      const newBtn = document.createElement('BUTTON')
-      newDiv.appendChild(newBtn)
-        
-      newBtn.onclick = function () {
-      newDiv.remove()
-    }
-    }
-    rec.onresult = function (event) {
       const changer = event.results[0][0].transcript.toLowerCase().trim()
 
       if (changer == 'yashil') {
@@ -114,7 +98,19 @@
       }
 
       else {
-        console.log('Tushunmadim :(')
+        const newDiv = document.createElement('DIV')
+        users.appendChild(newDiv)
+        
+        const newLi = document.createElement('LI')
+        newLi.textContent = event.results[0][0].transcript.toUpperCase().trim()
+        newDiv.appendChild(newLi)
+        
+        const newBtn = document.createElement('BUTTON')
+        newDiv.appendChild(newBtn)
+        
+        newBtn.onclick = function () {
+        newDiv.remove()
+        }
       }
     }
 
