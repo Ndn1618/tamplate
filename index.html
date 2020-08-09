@@ -44,7 +44,7 @@
       newP.textContent = 'Ovoz yozib olishda xatolik bor :('
       alertDiv.appendChild(newP)
 
-      window.onclick = function () {
+      newP.onclick = function () {
       newP.remove()
     }
     }
@@ -61,7 +61,7 @@
     users.appendChild(newDiv)
         
     const newLi = document.createElement('LI')
-    newLi.textContent = event.results[0][0].transcript.toLowerCase().trim()
+    newLi.textContent = event.results[0][0].transcript.trim()
     newDiv.appendChild(newLi)
         
     const newBtn = document.createElement('BUTTON')
@@ -90,7 +90,6 @@
           newDiv.remove()
         }
       }
-      
     }
     
     username_button.onclick = add
