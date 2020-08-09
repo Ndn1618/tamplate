@@ -48,16 +48,13 @@
     recButton.onclick = recStart
     
     rec.onresult = function (event) {
-    const command = event.results[0][0].transcript.toLowerCase().trim()
 
     const newDiv = document.createElement('DIV')
     users.appendChild(newDiv)
         
     const newLi = document.createElement('LI')
-    newLi.textContent = command.value
+    newLi.textContent = event.results[0][0].transcript.toLowerCase().trim()
     newDiv.appendChild(newLi)
-        
-    command.value = ''
         
     const newBtn = document.createElement('BUTTON')
     newDiv.appendChild(newBtn)
