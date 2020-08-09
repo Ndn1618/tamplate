@@ -17,10 +17,13 @@
         autocomplete="off" 
         spellcheck="false"
         placeholder="Username"
-      >
-      <button id="username_button">
-        <img src="img/add.svg" alt="Add icon" width="50" height="50">
-      </button>
+        >
+        <button id="username_button">
+          <img src="img/add.svg" alt="Add icon" width="50" height="50">
+        </button>
+        <button id="recButton">
+          <img src="img/radio-microphone.svg" alt="Voice recorder icon" width="50" height="50">
+        </button>
       </div>
       
       <ul id="users">
@@ -29,90 +32,82 @@
   </head>
   
   <script type="text/javascript">
-    // function add () {
-    //   const newDiv = document.createElement('DIV')
-    //   users.appendChild(newDiv)
+    
+    const rec = new webkitSpeechRecognition()
+    
+    rec.lang = 'uz-UZ'
+    
+    rec.onerror = function (event) {
+      console.log(event)
+    }
 
-    //   const newLi = document.createElement('LI')
-    //   newLi.textContent = username.value
-    //   newDiv.appendChild(newLi)
+    function recStart () {
+      rec.start()
+    }
 
-    //   username.value = ''
+    recButton.onclick = recStart
+    
+    rec.onresult = function (event) {
+    const command = event.results[0][0].transcript.toLowerCase().trim()
 
-    //   const newBtn = document.createElement('BUTTON')
-    //   newDiv.appendChild(newBtn)
+    const newDiv = document.createElement('DIV')
+    users.appendChild(newDiv)
+        
+    const newLi = document.createElement('LI')
+    newLi.textContent = command.value
+    newDiv.appendChild(newLi)
+        
+    command.value = ''
+        
+    const newBtn = document.createElement('BUTTON')
+    newDiv.appendChild(newBtn)
+        
+    newBtn.onclick = function () {
+    newDiv.remove()
+    }
 
-    //   newBtn.onclick = function () {
-    //     newLi.remove()
-    //     newDiv.remove()
-    //     newBtn.remove()
-    //   }
-    // }
-
-    // username_button.onclick = add
-
-    // username.onkeyup = function (event) {
-    //   if (event.keyCode == 13 && username.value.length > 0) {
-    //     const newDiv = document.createElement('DIV')
-    //   users.appendChild(newDiv)
-
-    //   const newLi = document.createElement('LI')
-    //   newLi.textContent = username.value
-    //   newDiv.appendChild(newLi)
-
-    //   username.value = ''
-
-    //   const newBtn = document.createElement('BUTTON')
-    //   newDiv.appendChild(newBtn)
-
-    //   newBtn.onclick = function () {
-    //     newLi.remove()
-    //     newDiv.remove()
-    //     newBtn.remove()
-    //   }
-    //   }
-    // }
+    }
 
     function add () {
       if (username.value.length > 0) {
         const newDiv = document.createElement('DIV')
         users.appendChild(newDiv)
-
+        
         const newLi = document.createElement('LI')
         newLi.textContent = username.value
         newDiv.appendChild(newLi)
-
+        
         username.value = ''
-
+        
         const newBtn = document.createElement('BUTTON')
         newDiv.appendChild(newBtn)
-
+        
         newBtn.onclick = function () {
-        newDiv.remove()
-      }
+          newDiv.remove()
+        }
       }
       
     }
-
+    
     username_button.onclick = add
-
+    
     username.onkeyup = function (event) {
       if (event.keyCode == 13 && username.value.length > 0) {
         const newDiv = document.createElement('DIV')
         users.appendChild(newDiv)
-
+        
         const newLi = document.createElement('LI')
         newLi.textContent = username.value
         newDiv.appendChild(newLi)
-
+        
         username.value = ''
-
+        
         const newBtn = document.createElement('BUTTON')
         newDiv.appendChild(newBtn)
-
+        
         newBtn.onclick = function () {
-        newDiv.remove()
-      }
+          newDiv.remove()
+        }
       }
     } 
   </script>
